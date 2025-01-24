@@ -3,7 +3,7 @@
 by Sumit Tarafder and Debswapna Bhattacharya
 
 
-![alt text](Fig1.png)
+![alt text](RNAbpFlow.png)
 
 ## Installation
 
