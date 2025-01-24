@@ -1,0 +1,16 @@
+defaults:
+- _self_
+hydra:
+  run:
+    dir: logs
+inference:
+  ckpt_path: checkpoint/model.ckpt
+  input_dir: Inputs
+  output_dir: Predictions
+  name: 2oiu_P
+  num_gpus: 1
+  interpolant:
+    sampling:
+      num_timesteps: 50
+  samples:
+    samples_per_sequence: 10
