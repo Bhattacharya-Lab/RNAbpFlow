@@ -28,8 +28,10 @@ Instructions for running RNAbpFlow:
 
 1. Place your FASTA sequences and base pair maps in the Inputs folder (examples are provided).
 2. Add a list of PDB IDs to list.txt inside the Inputs folder (an example is included).
-3. Each line in list.txt contains a target ID with the number of sample structures to generate separated by space. If not specified, RNAbpFlow will use the default value specified in the configuration file in "configs" folder
-
+3. Each line in list.txt contains a target ID with the number of sample structures to generate separated by space. If not specified, RNAbpFlow will use the default value specified in the configuration file in "configs" folder.
+4. Download the trained checkpoints from [here](https://doi.org/10.5281/zenodo.14729510).
+- For evaluation on RNA3DB set, put the RNA3DB.ckpt inside the folder named "checkpoint".
+- For CASP15 evaluation, put the CASP15.ckpt inside checkpoint folder and and edit the configs/inference.yaml to configure the "ckpt_path" field.
 5. Run this command to generate sample 3D structures.
    ```
    python3 inference.py
@@ -42,6 +44,6 @@ Instructions for running RNAbpFlow:
 ## Datasets
 
 - For training and benchmarking we used the train-test split provided by RNA3DB available [here](https://github.com/marcellszi/rna3db). We downloaded the May 16, 2024 release.
-- For CASP15 benchmarking, we collected the training set from [trRosettaRNA](https://yanglab.qd.sdu.edu.cn/trRosettaRNA/benchmark/).
 - For sampling performance comparison with RNAJP, we downloaded their decoy set from [here](https://rna.physics.missouri.edu/RNAJP/index.html) and the corresponding native structures from [PDB](https://www.rcsb.org/).
+- For CASP15 benchmarking, we collected the training set from [trRosettaRNA](https://yanglab.qd.sdu.edu.cn/trRosettaRNA/benchmark/).
 
