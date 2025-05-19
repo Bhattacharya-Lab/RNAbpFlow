@@ -31,7 +31,7 @@ Instructions for running RNAbpFlow:
 1. Place your FASTA sequences and base pair maps in the Inputs folder (examples are provided).
 2. Add a list of PDB IDs to list.txt inside the Inputs folder (an example is included).
 3. Each line in list.txt contains a target ID with the number of sample structures to generate separated by space. If not specified, RNAbpFlow will use the default value specified in the configuration file in "configs" folder.
-4. Download the trained checkpoints from [here](https://doi.org/10.5281/zenodo.14729510) and place the checkpoint folder in this repository.
+4. Download the trained checkpoints from [here](https://doi.org/10.5281/zenodo.14729510) and place it inside a folder named checkpoint (create a folder) in this repository.
 - The default checkpoint configured is : RNA3DB.ckpt
 - For CASP15 evaluation, edit the configs/inference.yaml to configure the "ckpt_path" field with checkpoint/CASP15.ckpt
 5. Run this command to generate sample 3D structures.
