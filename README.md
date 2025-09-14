@@ -2,7 +2,7 @@
 
 by Sumit Tarafder and Debswapna Bhattacharya
 
-[[bioRxiv](https://www.biorxiv.org/content/10.1101/2025.01.24.634669v1)] [[pdf](https://www.biorxiv.org/content/10.1101/2025.01.24.634669v1.full.pdf)]
+[[bioRxiv](https://www.biorxiv.org/content/10.1101/2025.01.24.634669v2)] [[pdf](https://www.biorxiv.org/content/10.1101/2025.01.24.634669v2.full.pdf)]
 
 
 ![alt text](RNAbpFlow.png)
