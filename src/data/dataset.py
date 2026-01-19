@@ -49,10 +49,10 @@ class RNADataset(torch.utils.data.Dataset):
         num_files = len(files)
 
         if num_files == 0:
-            sys.exit("No base pair maps provided. Exiting...")
+            sys.exit("No base pair maps provided. Please provide atleast one map.")
         elif num_files > 3:
             
-            print(f"More than 3 .npy maps provided. Using only the first 3 maps listed below")
+            print(f"More than 3 maps (.npy) provided. Using only the first 3 maps listed below")
             files = files[:3]
             print(files)
 

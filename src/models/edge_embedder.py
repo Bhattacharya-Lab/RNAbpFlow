@@ -19,9 +19,8 @@ class EdgeEmbedder(nn.Module):
 
         self.linear_s_p = nn.Linear(self.c_s, self.feat_dim)
         self.linear_relpos = nn.Linear(self.feat_dim, self.feat_dim)
-
-        total_edge_feats = self.feat_dim * 3 + self._cfg.num_bins * 1 + 3
-        #total_edge_feats = self.feat_dim * 3 + 3
+        
+        total_edge_feats = self.feat_dim * 3 + 3
 
         self.edge_embedder = nn.Sequential(
             nn.Linear(total_edge_feats, self.c_p),
@@ -55,11 +54,8 @@ class EdgeEmbedder(nn.Module):
         
         relpos_feats = self.embed_relpos(pos)
         
-        sc_feats = utils.calc_distogram(
-             sc_t, min_bin=1e-3, max_bin=20.0, num_bins=self._cfg.num_bins)
-        
         all_edge_feats = torch.concat(
-           [cross_node_feats, relpos_feats, sc_feats, ss], dim=-1)
+           [cross_node_feats, relpos_feats, ss], dim=-1)
         
         edge_feats = self.edge_embedder(all_edge_feats)
         edge_feats *= p_mask.unsqueeze(-1)

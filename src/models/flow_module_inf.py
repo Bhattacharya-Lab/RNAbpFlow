@@ -1,4 +1,4 @@
-import numpy as np, os
+import numpy as np, os, gemmi
 from pytorch_lightning import LightningModule
 from src.models.flow_model import FlowModel
 from src.data.interpolant_inf import Interpolant 
@@ -64,7 +64,23 @@ class FlowModule(LightningModule):
 
         structure = from_prediction(feats, results)
 
-        pdbpath = os.path.join(sample_dir, f'Sample_{sample_id}.pdb')
+        try:
+            out_fmt = self._infer_cfg.get("output_format", "pdb")
+        except Exception:
+            out_fmt = getattr(self._infer_cfg, "output_format", "pdb")
+        
+        out_fmt = str(out_fmt).lower()
 
-        with open(f"{pdbpath}", "wt") as f:
-            print(to_pdb(structure), file=f)
+        pdb_text = to_pdb(structure)
+
+        if out_fmt in ("pdb", "both"):
+            pdbpath = os.path.join(sample_dir, f"Sample_{sample_id}.pdb")
+            with open(pdbpath, "wt") as f:
+                print(pdb_text, file=f)
+
+        if out_fmt in ("mmcif", "cif", "pdbx", "pdbx/mmcif", "both"):
+            cifpath = os.path.join(sample_dir, f"Sample_{sample_id}.cif")
+
+            st = gemmi.read_pdb_string(pdb_text)
+            doc = st.make_mmcif_document()
+            doc.write_file(cifpath)

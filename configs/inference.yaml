@@ -14,3 +14,4 @@ inference:
       num_timesteps: 50
   samples:
     samples_per_sequence: 10
+  output_format: pdb   # choices: pdb | mmcif | both
