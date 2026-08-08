@@ -2,8 +2,9 @@
 
 by Sumit Tarafder and Debswapna Bhattacharya
 
-[[bioRxiv](https://www.biorxiv.org/content/10.1101/2025.01.24.634669v2)] [[pdf](https://www.biorxiv.org/content/10.1101/2025.01.24.634669v2.full.pdf)]
+published in [Nature Methods](https://doi.org/10.1038/s41592-026-03128-4)
 
+<a href="https://doi.org/10.5281/zenodo.19388910"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.19388910.svg" alt="DOI"></a>
 
 ![alt text](RNAbpFlow.png)
 
