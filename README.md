@@ -4,6 +4,8 @@ by Sumit Tarafder and Debswapna Bhattacharya
 
 published in [Nature Methods](https://doi.org/10.1038/s41592-026-03128-4)
 
+Codebase for our base-pair-conditioned RNA 3D structure generation method, RNAbpFlow.
+
 <a href="https://doi.org/10.5281/zenodo.19388910"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.19388910.svg" alt="DOI"></a>
 
 ![alt text](RNAbpFlow.png)
